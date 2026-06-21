@@ -6,8 +6,42 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Prevent horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Mobile-friendly focus states */
+@layer utilities {
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-12;
+  }
+
+  .heading-xl {
+    @apply text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white;
+  }
+
+  .heading-lg {
+    @apply text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white;
+  }
+
+  .body-text {
+    @apply text-base sm:text-lg text-foreground/80 leading-relaxed font-light;
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
 }
